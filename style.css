@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.calculator {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 24px;
+  width: 340px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6), 0 0 40px rgba(120, 80, 255, 0.15);
+}
+
+.display {
+  background: linear-gradient(135deg, rgba(120, 80, 255, 0.2), rgba(0, 200, 255, 0.1));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  min-height: 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.expression {
+  color: rgba(59, 14, 220, 0.75);
+  font-size: 14px;
+  min-height: 18px;
+  word-break: break-all;
+  text-align: right;
+}
+
+.result {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 300;
+  word-break: break-all;
+  text-align: right;
+  transition: font-size 0.1s;
+  text-shadow: 0 0 20px rgba(160, 120, 255, 0.5);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Number buttons */
+.btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e8e0ff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 18px 0;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+  user-select: none;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 15px rgba(120, 80, 255, 0.2);
+}
+
+.btn:active {
+  transform: scale(0.93);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Operator buttons — violet/purple accent */
+.btn.operator {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  color: #fff;
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  box-shadow: 0 4px 15px rgba(109, 40, 217, 0.4);
+}
+
+.btn.operator:hover {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+}
+
+/* Function buttons — teal/cyan accent */
+.btn.fn {
+  background: rgba(0, 210, 200, 0.12);
+  color: #5eead4;
+  border: 1px solid rgba(94, 234, 212, 0.2);
+  font-size: 15px;
+}
+
+.btn.fn:hover {
+  background: rgba(0, 210, 200, 0.789);
+  box-shadow: 0 4px 15px rgba(94, 234, 212, 0.2);
+}
+
+/* Equals button — vibrant gradient */
+.btn.equals {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  color: #fff;
+  font-size: 22px;
+  border: none;
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+}
+
+.btn.equals:hover {
+  background: linear-gradient(135deg, #fbbf24, #f87171);
+  box-shadow: 0 6px 25px rgba(239, 68, 68, 0.55);
+}
+
+.btn.span-two {
+  grid-column: span 2;
+}
+
+.error {
+  color: #f87171 !important;
+  font-size: 22px !important;
+  text-shadow: 0 0 10px rgba(248, 113, 113, 0.6) !important;
+}
